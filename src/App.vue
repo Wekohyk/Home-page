@@ -1,8 +1,10 @@
 <template>
   <!-- background -->
-  <div class="fixed left-0 top-0 w-100% h-100%">
-    <Background></Background>
-  </div>
+  <teleport to="body">
+    <div class="fixed left-0 top-0 w-100% h-100% z--1">
+      <Background></Background>
+    </div>
+  </teleport>
 </template>
 
 <script setup lang="ts">
