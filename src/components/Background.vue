@@ -54,7 +54,9 @@ onMounted(() => {
 
   width: 120%;
   height: 120%;
+  margin-bottom: calc($itemWidth / -2);
   flex: 0 0 120%;
+  transform: translate(-10%, calc($itemWidth / -2));
   background: radial-gradient(
     circle at var(--xPos) var(--yPos),
     transparent 0,
