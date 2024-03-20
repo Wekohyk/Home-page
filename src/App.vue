@@ -16,19 +16,30 @@
     </transition>
 
     <!-- backgroundImg -->
-    <div class="fixed left-0 top-0 w-100vw h-100vh opacity-70 bg-#000"></div>
+    <div class="fixed left-0 top-0 w-100vw h-100vh filter-brightness-[0.3]">
+      <BackgroundImg></BackgroundImg>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { backgroundImg } from './stores';
 import Loading from './components/Loading.vue';
+import BackgroundImg from './components/BackgroundImg.vue';
+import { ref, watch } from 'vue';
+
+const store = backgroundImg();
 
 // loading
 const loading = ref(true);
-setTimeout(() => {
-  loading.value = false;
-}, 2000);
+
+// watch img load status, if img load complete, set loading to false
+watch(
+  () => store.imgLoadStatus,
+  newVal => {
+    loading.value = !newVal;
+  },
+);
 </script>
 
 <style scoped lang="scss"></style>

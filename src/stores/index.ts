@@ -8,6 +8,7 @@ pinia.use(persist);
 // 导出pinia实例，给main使用
 export default pinia;
 
+export * from './modules/backgroundImg';
 // 统一导出，代码简洁，入口唯一
 // export * from './modules/consult';
 
