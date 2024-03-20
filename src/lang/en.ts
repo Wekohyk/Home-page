@@ -1,1 +1,4 @@
-export default {};
+export default {
+  loading: 'Loading...',
+  homePage: 'Home Page',
+};
