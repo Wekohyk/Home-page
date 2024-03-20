@@ -1,7 +1,7 @@
 <template>
   <div class="w-100%">
     <div
-      class="waterBox left-1/2 top-0 -translate-x-1/2 h-90 flex justify-center pt-1rem relative"
+      class="waterBox left-1/2 top-0 -translate-x-1/2 h-90 flex justify-left pt-1rem relative"
     >
       <div class="content flex flex-col relative">
         <div

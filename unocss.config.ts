@@ -135,5 +135,11 @@ export default defineConfig({
         `;
       },
     ],
+    [
+      'font-STXingkai',
+      {
+        'font-family': 'STXingkai',
+      },
+    ],
   ],
 });
