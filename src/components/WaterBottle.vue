@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="w-100%">
     <div
@@ -7,7 +5,8 @@
     >
       <div class="content flex flex-col relative">
         <div
-          class="bottle bg-#ffffff1a rounded-50% relative z-2 origin-bottom origin-center"
+          class="bottle bg-#ffffff1a rounded-50% relative z-2 origin-bottom origin-center cursor-pointer"
+          @click="goMySpace"
         >
           <div class="water" />
         </div>
@@ -16,6 +15,13 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+// go to my space
+const goMySpace = () => {
+  window.open('https://www.wekooo.com', '_self');
+};
+</script>
 
 <style scoped lang="scss">
 .waterBox {
