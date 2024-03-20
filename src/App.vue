@@ -16,17 +16,28 @@
     </transition>
 
     <!-- backgroundImg -->
-    <div class="fixed left-0 top-0 w-100vw h-100vh filter-brightness-[0.3]">
+    <div
+      class="fixed left-0 top-0 w-100vw h-100vh filter-brightness-[0.3] -z-999"
+    >
       <BackgroundImg></BackgroundImg>
+    </div>
+
+    <!-- top menu bar -->
+    <div class="flex justify-left items-center w-100vw">
+      <!-- logo -->
+      <div class="w-50 flex justify-center items-center">
+        <WaterBottle></WaterBottle>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { backgroundImg } from './stores';
+import { ref, watch } from 'vue';
 import Loading from './components/Loading.vue';
 import BackgroundImg from './components/BackgroundImg.vue';
-import { ref, watch } from 'vue';
+import WaterBottle from './components/WaterBottle.vue';
 
 const store = backgroundImg();
 

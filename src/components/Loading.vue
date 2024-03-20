@@ -26,7 +26,7 @@ const list = new Array(20).fill(0);
     </div>
     <!-- loading text -->
     <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-20 justify-center items-center text-#fff opacity-70"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-1rem justify-center items-center text-center text-#fff opacity-70"
     >
       <div class="text-1.5rem">
         {{ $t('homePage') }}
@@ -40,7 +40,7 @@ const list = new Array(20).fill(0);
 
 <style scoped lang="scss">
 .loadingBox {
-  $circleWidth: 230px;
+  $circleWidth: 190px;
   $dotWidth: 16px;
 
   .content {

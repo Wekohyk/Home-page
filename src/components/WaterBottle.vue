@@ -1,10 +1,14 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div style="width: 100%">
-    <div class="waterBox">
-      <div class="content">
-        <div class="bottle">
+  <div class="w-100%">
+    <div
+      class="waterBox left-1/2 top-0 -translate-x-1/2 h-90 flex justify-center pt-1rem relative"
+    >
+      <div class="content flex flex-col relative">
+        <div
+          class="bottle bg-#ffffff1a rounded-50% relative z-2 origin-bottom origin-center"
+        >
           <div class="water" />
         </div>
         <div class="bottleBottom" />
@@ -15,36 +19,19 @@
 
 <style scoped lang="scss">
 .waterBox {
-  width: 100%;
-  height: 380px;
-  display: flex;
-  justify-content: center;
-  padding-top: 120px;
-  position: relative;
-
-  $bottleWidth: 200px;
+  $bottleWidth: 30px;
 
   .content {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
     .bottle {
       width: $bottleWidth;
       height: $bottleWidth;
-      background-color: #ffffff1a;
-      border-radius: 50%;
-      position: relative;
-      animation: animate 2s linear infinite;
-      transform-origin: bottom center;
-      z-index: 2;
 
       &::before {
         content: '';
         position: absolute;
-        top: -5px;
+        top: -3px;
         left: 50%;
-        width: calc($bottleWidth / 2);
+        width: calc($bottleWidth / 3);
         height: calc($bottleWidth / 5);
         border-radius: 50%;
         transform: translate(-50%);
@@ -55,9 +42,9 @@
       .water {
         position: absolute;
         top: 50%;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
         background-color: #41c1fb;
         border-bottom-left-radius: calc($bottleWidth / 2);
         border-bottom-right-radius: calc($bottleWidth / 2);
