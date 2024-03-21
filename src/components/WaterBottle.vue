@@ -1,17 +1,15 @@
 <template>
-  <div class="w-100%">
-    <div
-      class="waterBox left-1/2 top-0 -translate-x-1/2 h-90 flex justify-left pt-1rem relative"
-    >
-      <div class="content flex flex-col relative">
-        <div
-          class="bottle bg-#ffffff1a rounded-50% relative z-2 origin-bottom origin-center cursor-pointer"
-          @click="goMySpace"
-        >
-          <div class="water" />
-        </div>
-        <div class="bottleBottom" />
+  <div class="waterBox flex justify-center items-center pt-1rem relative">
+    <div class="content flex flex-col relative">
+      <div
+        class="bottle bg-#ffffff1a rounded-50% relative z-2 origin-bottom origin-center cursor-pointer"
+        @click="goMySpace"
+      >
+        <div class="water" />
       </div>
+      <div
+        class="bottleBottom absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-30 bg-[rgba(0,0,0,0.5)] rounded-50%"
+      />
     </div>
   </div>
 </template>
@@ -25,7 +23,7 @@ const goMySpace = () => {
 
 <style scoped lang="scss">
 .waterBox {
-  $bottleWidth: 30px;
+  $bottleWidth: 80px;
 
   .content {
     .bottle {
@@ -35,9 +33,9 @@ const goMySpace = () => {
       &::before {
         content: '';
         position: absolute;
-        top: -3px;
+        top: -5px;
         left: 50%;
-        width: calc($bottleWidth / 3);
+        width: calc($bottleWidth / 2);
         height: calc($bottleWidth / 5);
         border-radius: 50%;
         transform: translate(-50%);
@@ -48,9 +46,9 @@ const goMySpace = () => {
       .water {
         position: absolute;
         top: 50%;
-        bottom: 2px;
-        left: 2px;
-        right: 2px;
+        bottom: 3px;
+        left: 3px;
+        right: 3px;
         background-color: #41c1fb;
         border-bottom-left-radius: calc($bottleWidth / 2);
         border-bottom-right-radius: calc($bottleWidth / 2);
@@ -71,14 +69,6 @@ const goMySpace = () => {
     }
 
     .bottleBottom {
-      position: absolute;
-      top: calc(100% - 66px);
-      left: 50%;
-      width: $bottleWidth;
-      height: 30px;
-      background-color: rgba(0, 0, 0, 0.5);
-      transform: translateX(-50%);
-      border-radius: 50%;
       animation: move 2s linear infinite;
     }
   }

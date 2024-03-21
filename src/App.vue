@@ -22,9 +22,9 @@
       <BackgroundImg></BackgroundImg>
     </div>
 
-    <!-- top menu bar -->
-    <div class="flex justify-left items-center w-100vw">
-      <TopMenuBar></TopMenuBar>
+    <!-- center box -->
+    <div class="flex justify-center items-center flex-col w-100vw h-100vh">
+      <WaterBottle></WaterBottle>
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ import { backgroundImg } from './stores';
 import { ref, watch } from 'vue';
 import Loading from './components/Loading.vue';
 import BackgroundImg from './components/BackgroundImg.vue';
-import TopMenuBar from './components/TopMenuBar.vue';
+import WaterBottle from './components/WaterBottle.vue';
 
 const store = backgroundImg();
 
