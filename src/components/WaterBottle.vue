@@ -8,7 +8,7 @@
         <div class="water" />
       </div>
       <div
-        class="bottleBottom absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-30 bg-[rgba(0,0,0,0.5)] rounded-50%"
+        class="bottleBottom absolute bottom-0 left-1/2 -translate-x-1/2 w-5.5vw h-30 bg-[rgba(0,0,0,0.5)] rounded-50%"
       />
     </div>
   </div>
@@ -23,7 +23,7 @@ const goMySpace = () => {
 
 <style scoped lang="scss">
 .waterBox {
-  $bottleWidth: 80px;
+  $bottleWidth: 5.5vw;
 
   .content {
     .bottle {

@@ -23,8 +23,13 @@
     </div>
 
     <!-- center box -->
-    <div class="flex justify-center items-center flex-col w-100vw h-100vh">
+    <div
+      class="flex justify-center items-center flex-col w-100vw h-100vh gap-20"
+    >
       <WaterBottle></WaterBottle>
+      <div class="relative">
+        <Input></Input>
+      </div>
     </div>
   </div>
 </template>
@@ -35,6 +40,8 @@ import { ref, watch } from 'vue';
 import Loading from './components/Loading.vue';
 import BackgroundImg from './components/BackgroundImg.vue';
 import WaterBottle from './components/WaterBottle.vue';
+// searchInput
+import Input from './components/searchInput/Input.vue';
 
 const store = backgroundImg();
 
