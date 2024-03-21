@@ -19,6 +19,7 @@
           class="px-10 py-5 rounded-10 bg-#fff flex justify-left items-center gap-5"
           v-for="(item, index) in props.list"
           :key="index"
+          @click="switchEngine(item)"
         >
           <div class="flex items-center justify-center">
             <img :src="item.img" class="h-30 w-30" />
@@ -38,6 +39,10 @@ const props = defineProps<{
   list: SearchEngine[];
   show: boolean;
 }>();
+
+const switchEngine = (engine: SearchEngine) => {
+  console.log(engine.name);
+};
 </script>
 
 <style scoped lang="scss"></style>
