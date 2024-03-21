@@ -5,7 +5,7 @@
     <!-- Switch search engines  -->
     <div
       @click.stop="showPopup"
-      class="w-30 h-full flex items-center justify-right ml-11 cursor-pointer"
+      class="h-full flex items-center justify-right pl-1 cursor-pointer"
     >
       <img src="/svg/google.svg" class="h-full" />
     </div>
@@ -15,7 +15,7 @@
       type="text"
     />
     <!-- search -->
-    <div class="w-30 h-full flex items-center cursor-pointer">
+    <div class="h-full flex items-center cursor-pointer pr-5">
       <img src="/svg/search.svg" class="h-2/3" />
     </div>
   </div>

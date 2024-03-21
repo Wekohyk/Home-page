@@ -141,4 +141,29 @@ const goMySpace = () => {
     }
   }
 }
+
+// 屏幕小于775
+@media (max-width: 775px) {
+  .waterBox {
+    $bottleWidth: 45px;
+
+    .content {
+      .bottle {
+        width: $bottleWidth;
+        height: $bottleWidth;
+
+        &::before {
+          width: calc($bottleWidth / 2);
+          height: calc($bottleWidth / 5);
+          box-shadow: 0 calc($bottleWidth / 30) 5px #000;
+        }
+
+        .water {
+          border-bottom-left-radius: calc($bottleWidth / 2);
+          border-bottom-right-radius: calc($bottleWidth / 2);
+        }
+      }
+    }
+  }
+}
 </style>
