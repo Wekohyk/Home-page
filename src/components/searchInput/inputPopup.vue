@@ -14,9 +14,11 @@
         {{ $t('pleaseChooseEngines') }}
       </div>
       <!-- every engines -->
-      <div class="flex justify-center items-center gap-10 mt-2vh">
+      <div
+        class="allEngines flex justify-left items-center gap-10 mt-2vh flex-wrap overflow-y-auto h-25vh"
+      >
         <div
-          class="px-10 py-5 rounded-10 bg-#fff flex justify-left items-center gap-5"
+          class="everyEngines px-10 py-5 w-200 rounded-10 bg-#fff flex justify-left items-center gap-5 cursor-pointer"
           v-for="(item, index) in props.list"
           :key="index"
           @click="switchEngine(item)"
@@ -45,4 +47,13 @@ const switchEngine = (engine: SearchEngine) => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media (max-width: 768px) {
+  .allEngines {
+    min-width: 200px;
+    .everyEngines {
+      min-width: 200px;
+    }
+  }
+}
+</style>

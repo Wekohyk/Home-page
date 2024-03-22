@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-#fff w-40vw h-6vh rounded-20px flex items-center justify-between overflow-hidden opacity-70"
+    class="inputContainer bg-#fff w-40vw h-6vh rounded-20px flex items-center justify-between overflow-hidden opacity-70"
   >
     <!-- Switch search engines  -->
     <div
@@ -29,29 +29,30 @@
 import inputPopup from './inputPopup.vue';
 import { SearchEngine } from '../../types/searchInput';
 import { ref } from 'vue';
+import { $t } from '../../lang';
 const searchEngines: SearchEngine[] = [
   {
-    name: 'google',
+    name: $t('google'),
     url: 'https://www.google.com/search?q=',
     img: '/svg/google.svg',
   },
   {
-    name: 'baidu',
+    name: $t('baidu'),
     url: 'https://www.baidu.com/s?wd=',
     img: '/svg/baidu.svg',
   },
   {
-    name: 'github',
+    name: $t('github'),
     url: 'https://github.com/search?q=',
     img: '/svg/github.svg',
   },
   {
-    name: 'bilibili',
+    name: $t('bilibili'),
     url: 'https://search.bilibili.com/all?keyword=',
     img: '/svg/bilibili.svg',
   },
   {
-    name: 'YouTube',
+    name: $t('youtube'),
     url: 'https://www.youtube.com/results?search_query=',
     img: '/svg/youtube.svg',
   },
@@ -74,4 +75,10 @@ const showPopup = () => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media (max-width: 768px) {
+  .inputContainer {
+    min-width: 200px;
+  }
+}
+</style>
