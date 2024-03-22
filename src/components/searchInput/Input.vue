@@ -5,9 +5,9 @@
     <!-- Switch search engines  -->
     <div
       @click.stop="showPopup"
-      class="h-full flex items-center justify-right pl-1 cursor-pointer"
+      class="h-full flex items-center justify-right pl-3 cursor-pointer"
     >
-      <img :src="engineSrc" class="h-full" />
+      <img :src="engineSrc" class="h-full w-full" />
     </div>
     <input
       class="w-full h-full pl-5 text-1rem"
