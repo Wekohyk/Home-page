@@ -7,7 +7,7 @@
       @click.stop="showPopup"
       class="h-full flex items-center justify-right pl-3 cursor-pointer"
     >
-      <img :src="engineSrc" class="h-full w-full" />
+      <img :src="engineSrc?.img" class="h-full w-full" />
     </div>
     <input
       class="w-full h-full pl-5 text-1rem"
@@ -79,8 +79,8 @@ const showPopup = () => {
 };
 
 // son component emit event
-const engineSrc = ref<string>('');
-const switchEngine = (img: string) => {
+const engineSrc = ref<SearchEngine>();
+const switchEngine = (img: SearchEngine) => {
   engineSrc.value = img;
 };
 </script>
