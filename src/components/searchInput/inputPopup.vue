@@ -21,7 +21,7 @@
           class="everyEngines px-10 py-5 w-200 rounded-10 bg-#fff flex justify-left items-center gap-5 cursor-pointer"
           v-for="(item, index) in props.list"
           :key="index"
-          @click="switchEngine(item)"
+          @click="switchEngine(item.img)"
         >
           <div class="flex items-center justify-center">
             <img :src="item.img" class="h-30 w-30" />
@@ -36,15 +36,22 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { SearchEngine } from '../../types/searchInput';
+const emit = defineEmits(['switchEngine']);
 const props = defineProps<{
   list: SearchEngine[];
   show: boolean;
 }>();
 
-const switchEngine = (engine: SearchEngine) => {
-  console.log(engine.name);
+const switchEngine = (engine: string) => {
+  let img = ref<string>(engine);
+  emit('switchEngine', img.value);
 };
+
+onMounted(() => {
+  switchEngine(props.list[0].img);
+});
 </script>
 
 <style scoped lang="scss">

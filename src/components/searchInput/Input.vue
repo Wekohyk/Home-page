@@ -7,7 +7,7 @@
       @click.stop="showPopup"
       class="h-full flex items-center justify-right pl-1 cursor-pointer"
     >
-      <img src="/svg/google.svg" class="h-full" />
+      <img :src="engineSrc" class="h-full" />
     </div>
     <input
       class="w-full h-full pl-5 text-1rem"
@@ -21,7 +21,11 @@
   </div>
   <!-- Switch search engines popup -->
   <div>
-    <inputPopup :show="popupShow" :list="searchEngines"></inputPopup>
+    <inputPopup
+      @switchEngine="switchEngine"
+      :show="popupShow"
+      :list="searchEngines"
+    ></inputPopup>
   </div>
 </template>
 
@@ -72,6 +76,12 @@ const showPopup = () => {
       popupShow.value = false;
     });
   }
+};
+
+// son component emit event
+const engineSrc = ref<string>('');
+const switchEngine = (img: string) => {
+  engineSrc.value = img;
 };
 </script>
 
