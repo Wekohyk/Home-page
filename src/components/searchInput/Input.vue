@@ -1,6 +1,6 @@
 <template>
   <div
-    @keyup.enter="search(`${engineSrc!.url} + ${inputText}`)"
+    @keyup.enter="search(inputText)"
     class="inputContainer bg-#fff w-40vw h-6vh rounded-20px flex items-center justify-between overflow-hidden opacity-70"
   >
     <!-- Switch search engines  -->
@@ -19,7 +19,7 @@
     <!-- search -->
     <div
       class="h-full flex items-center cursor-pointer pr-5"
-      @click="search(`${engineSrc!.url} + ${inputText}`)"
+      @click="search(inputText)"
     >
       <img src="/svg/search.svg" class="h-2/3" />
     </div>
@@ -43,27 +43,32 @@ const inputText = ref<string>('');
 const searchEngines: SearchEngine[] = [
   {
     name: $t('google'),
-    url: 'https://www.google.com/search?q=',
+    url: 'https://www.google.com/',
+    search: 'search?q=',
     img: '/svg/google.svg',
   },
   {
     name: $t('baidu'),
-    url: 'https://www.baidu.com/s?wd=',
+    url: 'https://www.baidu.com/',
+    search: 's?wd=',
     img: '/svg/baidu.svg',
   },
   {
     name: $t('github'),
-    url: 'https://github.com/search?q=',
+    url: 'https://github.com/',
+    search: 'search?q=',
     img: '/svg/github.svg',
   },
   {
     name: $t('bilibili'),
-    url: 'https://search.bilibili.com/all?keyword=',
+    url: 'https://search.bilibili.com/',
+    search: 'all?keyword=',
     img: '/svg/bilibili.svg',
   },
   {
     name: $t('youtube'),
-    url: 'https://www.youtube.com/results?search_query=',
+    url: 'https://www.youtube.com/',
+    search: 'results?search_query=',
     img: '/svg/youtube.svg',
   },
 ];
@@ -86,13 +91,20 @@ const showPopup = () => {
 
 // son component emit event
 const engineSrc = ref<SearchEngine>();
-const switchEngine = (img: SearchEngine) => {
-  engineSrc.value = img;
+const switchEngine = (item: SearchEngine) => {
+  engineSrc.value = item;
 };
 
 // search
 const search = (url: string) => {
-  window.open(url, '_self');
+  // if input is empty, open search engine home page
+  if (!inputText.value) {
+    return window.open(`${engineSrc.value!.url}`, '_self');
+  }
+  window.open(
+    `${engineSrc.value!.url}${engineSrc.value!.search}${url}`,
+    '_self',
+  );
 };
 </script>
 
