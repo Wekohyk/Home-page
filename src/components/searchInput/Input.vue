@@ -1,5 +1,6 @@
 <template>
   <div
+    @keyup.enter="search(`${engineSrc!.url} + ${inputText}`)"
     class="inputContainer bg-#fff w-40vw h-6vh rounded-20px flex items-center justify-between overflow-hidden opacity-70"
   >
     <!-- Switch search engines  -->
@@ -12,10 +13,14 @@
     <input
       class="w-full h-full pl-5 text-1rem"
       placeholder="请输入想搜索的内容"
+      v-model="inputText"
       type="text"
     />
     <!-- search -->
-    <div class="h-full flex items-center cursor-pointer pr-5">
+    <div
+      class="h-full flex items-center cursor-pointer pr-5"
+      @click="search(`${engineSrc!.url} + ${inputText}`)"
+    >
       <img src="/svg/search.svg" class="h-2/3" />
     </div>
   </div>
@@ -34,6 +39,7 @@ import inputPopup from './inputPopup.vue';
 import { SearchEngine } from '../../types/searchInput';
 import { ref } from 'vue';
 import { $t } from '../../lang';
+const inputText = ref<string>('');
 const searchEngines: SearchEngine[] = [
   {
     name: $t('google'),
@@ -82,6 +88,11 @@ const showPopup = () => {
 const engineSrc = ref<SearchEngine>();
 const switchEngine = (img: SearchEngine) => {
   engineSrc.value = img;
+};
+
+// search
+const search = (url: string) => {
+  window.open(url, '_self');
 };
 </script>
 
