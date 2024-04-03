@@ -1,14 +1,14 @@
 <template>
   <div
     @keyup.enter="search(inputText)"
-    class="inputContainer bg-#fff w-40vw h-6vh rounded-50px flex items-center justify-between overflow-hidden opacity-70"
+    class="inputContainer bg-#fff w-40vw h-40px rounded-50px flex items-center justify-between overflow-hidden opacity-70"
   >
     <!-- Switch search engines  -->
     <div
       @click.stop="showPopup"
-      class="h-full flex items-center justify-right pl-3 cursor-pointer"
+      class="h-full flex items-center justify-right pl-1 cursor-pointer"
     >
-      <img :src="engineSrc?.img" class="h-full w-full" />
+      <img :src="engineSrc?.img" class="h-40px w-40px" />
     </div>
     <input
       class="w-full h-full pl-5 text-1rem"
