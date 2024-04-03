@@ -1,7 +1,7 @@
 <template>
   <div
     @keyup.enter="search(inputText)"
-    class="inputContainer bg-#fff w-40vw h-6vh rounded-20px flex items-center justify-between overflow-hidden opacity-70"
+    class="inputContainer bg-#fff w-40vw h-6vh rounded-50px flex items-center justify-between overflow-hidden opacity-70"
   >
     <!-- Switch search engines  -->
     <div
