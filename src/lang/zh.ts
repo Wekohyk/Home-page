@@ -8,4 +8,5 @@ export default {
   github: 'Github',
   bilibili: '哔哩哔哩',
   youtube: 'Youtube',
+  sourceText: '请输入想搜索的内容',
 };

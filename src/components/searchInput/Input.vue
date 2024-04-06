@@ -12,7 +12,7 @@
     </div>
     <input
       class="w-full h-full pl-5 text-1rem"
-      placeholder="请输入想搜索的内容"
+      :placeholder="$t('sourceText')"
       v-model="inputText"
       type="text"
     />
