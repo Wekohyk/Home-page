@@ -8,5 +8,5 @@ export default {
   github: 'Github',
   bilibili: 'Bilibili',
   youtube: 'Youtube',
-  searchText: 'please search want context',
+  sourceText: 'please search want context',
 };
